@@ -4,15 +4,19 @@ __author__ = "730664950"
 
 
 def add_by_kind(plants_by_kind: dict[str, list[str]], plant_kind: str, plant: str) -> None:
-    if plant_kind in plants_by_kind: #if kep"plant_kind" is in "plants_by_kind"
+    """add_by_kind function."""
+    if plant_kind in plants_by_kind:  # if kep"plant_kind" is in "plants_by_kind"
         plants_by_kind[plant_kind].append(plant)
-    else:# if key "plant_kind is NOT in "plants_by_kind" 
+    else:  # if key "plant_kind is NOT in "plants_by_kind" 
         plants_by_kind[plant_kind] = []
         plants_by_kind[plant_kind].append(plant)
 
 
 by_date: dict[str, list[str]] = {"April": ["marigold"], "June": ["carrots"]}
+
+
 def add_by_date(plants_by_date: dict[str, list[str]], month: str, plant: str) -> None:
+    """add_by_date fucntion."""
     if month in plants_by_date:
         plants_by_date[month].append(plant)
     else:
@@ -21,6 +25,7 @@ def add_by_date(plants_by_date: dict[str, list[str]], month: str, plant: str) ->
 
 
 def lookup_by_kind_and_date(plants_by_kind: dict[str, list[str]], plants_by_date: dict[str, list[str]], plant_kind: str, month: str):
+    """lookup_by_kind_and_date fucntion."""
     # Makes sure the keys are in values
     assert plant_kind in plants_by_kind
     assert month in plants_by_date
